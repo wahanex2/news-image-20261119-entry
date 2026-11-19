@@ -15,12 +15,13 @@ TAN = (222, 200, 160)
 GOLD = (212, 175, 55)
 GREY = (110, 105, 90)
 
-SERIF = "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf"
-SERIF_B = "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf"
-SANS = "/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf"
-SANS_B = "/usr/share/fonts/truetype/noto/NotoSans-Bold.ttf"
-SANS_M = "/usr/share/fonts/truetype/noto/NotoSans-Medium.ttf"
-SANS_I = "/usr/share/fonts/truetype/noto/NotoSans-Italic.ttf"
+FONTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fonts")
+SERIF = os.path.join(FONTS_DIR, "DejaVuSerif.ttf")
+SERIF_B = os.path.join(FONTS_DIR, "DejaVuSerif-Bold.ttf")
+SANS = os.path.join(FONTS_DIR, "NotoSans-Regular.ttf")
+SANS_B = os.path.join(FONTS_DIR, "NotoSans-Bold.ttf")
+SANS_M = os.path.join(FONTS_DIR, "NotoSans-Medium.ttf")
+SANS_I = os.path.join(FONTS_DIR, "NotoSans-Italic.ttf")
 
 _fonts = {}
 
@@ -670,7 +671,10 @@ def build_page():
 
 def main():
     img = build_page()
-    if os.path.isdir("/output"):
+    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR")
+    if out_dir:
+        out = os.path.join(out_dir, "entry.png")
+    elif os.path.isdir("/output"):
         out = "/output/entry.png"
     else:
         out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "entry.png")
