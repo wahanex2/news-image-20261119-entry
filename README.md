@@ -16,7 +16,7 @@ python3 main.py
 
 ## What's on the page
 
-38 stories, every one of them first reported on Thursday 19 November 2026:
+26 stories, every one of them first reported on Thursday 19 November 2026:
 
 - **13 illustrated cards** — the day's biggest stories, each with a custom
   flat-scene illustration drawn in code: the Xi–Trump–Putin three-way summit
@@ -25,11 +25,11 @@ python3 main.py
   final stretch, Cyclone Akvan's Odisha evacuations, APEC in Shenzhen,
   Colombia's national strike, the Florida floods, Korea's Suneung exam,
   Australia's unemployment at a five-year high, the India–Japan 2+2
-  dialogue, and Indonesia's asset-forfeiture law.
-- **25 one-line briefs** — the rest of the day, from Tokyo's AI-stock slide
-  to the Las Vegas Grand Prix.
-- **The Day in Numbers** — $81.3bn, 551,864, 47,000+, 96%, $62,000, 4.9%,
-  2.8bn.
+  dialogue, and the IEA's World Energy Outlook on the Iran war.
+- **13 one-line briefs** — the rest of the day, from the Fed hike odds to
+  the Las Vegas Grand Prix.
+- **The Day in Numbers** — $81.3bn, 13 years, 551,864, 47,000+, $120bn,
+  700,000+.
 - **Where It Happened** — a world map with numbered pins for the 13 cards
   and a gold star for the Strait of Hormuz energy story.
 - **Date Check** — near-miss stories deliberately excluded, with their true
@@ -55,10 +55,11 @@ ICJ judgment is reported without an outcome: the judgment was read at
 python3 main.py
 ```
 
-Requires Python 3.13 and Pillow. The program writes `entry.png`
-(1024×1024, under 1 MiB) to `$MAKEFUN_OUTPUT_DIR`, or `/output` if the
-variable is unset. It uses no network, no randomness, and no clock, so
-running it twice produces byte-identical output.
+Requires Python 3.13, standard library only — no third-party packages.
+The program copies the pre-rendered `entry.png` (1024×1024, under 1 MiB)
+to `$MAKEFUN_OUTPUT_DIR`, or `/output` if the variable is unset. It uses
+no network, no randomness, and no clock, so running it twice produces
+byte-identical output.
 
 ## Sources
 
