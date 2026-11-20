@@ -27,6 +27,9 @@ def _output_folder(here):
 def run():
     here = os.path.dirname(os.path.abspath(__file__))
     source = _pick_destination(here)
+    if not os.path.isfile(source):
+        print("missing entry image:", source)
+        return 1
     folder = _output_folder(here)
     os.makedirs(folder, exist_ok=True)
     target = _pick_destination(folder)
